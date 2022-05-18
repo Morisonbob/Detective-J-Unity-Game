@@ -1,0 +1,19 @@
+fileFormatVersion: 2
+guid: 30c71cb0e018d7146abeecbdd36b8397
+timeCreated: 1524661062
+licenseType: Free
+MonoImporter:
+  externalObjects: {}
+  serializedVersion: 2
+  defaultReferences:
+  - display: {instanceID: 0}
+  - audioS: {instanceID: 0}
+  - player: {fileID: 114995882575094372, guid: 0bde1e853df421149ab48ea4f9ecda9f, type: 2}
+  - canvas: {instanceID: 0}
+  - acertou: {instanceID: 0}
+  - errou: {instanceID: 0}
+  executionOrder: 0
+  icon: {instanceID: 0}
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 

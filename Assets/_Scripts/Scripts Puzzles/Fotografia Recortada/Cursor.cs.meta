@@ -1,0 +1,20 @@
+fileFormatVersion: 2
+guid: b6f05f3b30832224dba23646d116491d
+timeCreated: 1524661077
+licenseType: Free
+MonoImporter:
+  externalObjects: {}
+  serializedVersion: 2
+  defaultReferences:
+  - playerCursor: {instanceID: 0}
+  - panelPuzzle: {instanceID: 0}
+  - pecaCarregada: {instanceID: 0}
+  - pack: {instanceID: 0}
+  - canvas: {instanceID: 0}
+  - sourceAudio: {instanceID: 0}
+  - player: {fileID: 114995882575094372, guid: 0bde1e853df421149ab48ea4f9ecda9f, type: 2}
+  executionOrder: 0
+  icon: {instanceID: 0}
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 

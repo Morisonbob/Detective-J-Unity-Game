@@ -1,0 +1,1 @@
+Refazer o ControlePersonagem e o Movimento. Dar um merge neles.
