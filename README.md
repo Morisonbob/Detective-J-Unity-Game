@@ -7,7 +7,7 @@ Detective J is a <b>puzzle</b> and <b>narrative game</b> in wich the player has 
 
 The game adressess some <b>heavy topics</b> like <b>racism</b> and is supossed to led the player to reflect about the topics.
 The game main protagonist is a young black man entering the police force, while suffering racism from the police force and also being branded as a traitor for his community.
-<img src="[https://i.imgur.com/WQ9bZYv.png](https://i.imgur.com/yv7zMyz.png)">
+<img src="https://i.imgur.com/yv7zMyz.png">
 
 <b>#Talking Design#</b>
 
