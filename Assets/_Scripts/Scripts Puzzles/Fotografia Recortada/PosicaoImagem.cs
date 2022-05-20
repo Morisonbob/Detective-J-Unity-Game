@@ -17,6 +17,16 @@ public class PosicaoImagem : MonoBehaviour
     public Vector3 posCorreta;
     //Variável que irá informar se a peça está, ou não, no lugar certo.
     public bool posOk;
+    //posição inicial da imagem, usada para fazer o reset
+    public Vector3 posInicial;
+    //RectTransform só pra não pesar tanto a chamada depois
+    public RectTransform rect;
+
+    private void Awake()
+    {
+        rect = GetComponent<RectTransform>();
+        posInicial = gameObject.transform.localPosition;
+    }
 
     void Update()
     {

@@ -17,17 +17,22 @@ public class PuzzleLock : MonoBehaviour
     public int currentHouse;
     //O limite de digitos que pode ter no cofre
     //Botei um Range pq eu quis, sei lá
-    [Range (4,8)] public int limiteDigitos;
+    [Range(4, 8)] public int limiteDigitos;
 
     //Pega o audiosource que será responsavel pelo audio
     public AudioSource audioS;
     //Referencia ao jogador
-    public Movimento player;
+    public PlayerControl player;
     //Referencia ao prefab do puzzle
     public GameObject canvas;
     //Os clips de audio que serão tocados
     public AudioClip acertou;
     public AudioClip errou;
+
+    private void Update()
+    {
+        SairDoPuzzle();
+    }
 
     //Função que recebe uma string (q vai ser o número assignado ao botão)
     public void InputButton(string Input)
@@ -69,7 +74,8 @@ public class PuzzleLock : MonoBehaviour
             //Toca um som e fecha o puzzle
             audioS.Play();
             //O prefab é desativado após 2 segundos, o tempo pra musica tocar
-            Invoke("DesativaPuzzle", 2);
+            //Usando o Invoke a partir do singleton do TextController por motivos de organização
+            TextoParaJSON.singleton.Invoke("DesativaPuzzle", 2);
         }
         //Caso não corresponda a senha
         else
@@ -87,10 +93,12 @@ public class PuzzleLock : MonoBehaviour
         }
     }
 
-    void DesativaPuzzle()
+    public void SairDoPuzzle()
     {
-        print("carai");
-        canvas.SetActive(false);
-        player.conversando = false;
+        if (Input.GetKeyDown(KeyCode.Escape))
+        {
+            Apagar();
+            TextoParaJSON.singleton.PausaPuzzle();
+        }
     }
 }

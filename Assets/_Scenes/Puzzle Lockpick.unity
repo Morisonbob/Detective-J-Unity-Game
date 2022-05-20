@@ -123,6 +123,7 @@ GameObject:
   - component: {fileID: 202401945}
   - component: {fileID: 202401944}
   - component: {fileID: 202401943}
+  - component: {fileID: 202401946}
   m_Layer: 0
   m_Name: EventSystem
   m_TagString: Untagged
@@ -175,6 +176,25 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 5
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &202401946
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 202401942}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7dfc16eceb51a794891d1016a3efe1a1, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  id: {fileID: 0}
+  player: {fileID: 0}
+  PanelPrincipal: {fileID: 0}
+  imagemPainel: {fileID: 0}
+  imagemFalante: {fileID: 0}
+  textoNome: {fileID: 0}
+  textoFala: {fileID: 0}
+  panelBg: []
 --- !u!1 &265916609
 GameObject:
   m_ObjectHideFlags: 0
@@ -568,10 +588,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7d8a075f4c81a754d82e3fedbd203d9e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  martelinho: {fileID: 2103700621}
+  Player: {fileID: 0}
   textoTempo: {fileID: 1840272416}
-  canvasLockpick: {fileID: 0}
-  player: {fileID: 114995882575094372, guid: 0bde1e853df421149ab48ea4f9ecda9f, type: 2}
   Pinos:
   - {fileID: 929873901}
   - {fileID: 667710213}
@@ -1354,4 +1372,3 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   mexeu: 0
   segurandoPino: 0
-  distanciaEntrePino: 1.5

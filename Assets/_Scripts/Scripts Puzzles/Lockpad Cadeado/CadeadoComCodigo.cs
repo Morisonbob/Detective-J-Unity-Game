@@ -6,19 +6,20 @@ using UnityEngine.UI;
 public class CadeadoComCodigo : MonoBehaviour
 {
     //TODO: Fazer com que o jogador possa sair do puzzle sem o terminar
+    //TODO: Mudar os nomes das variaveis para algo que as defina melhor
 
     //Pai das duas setinhas
     public GameObject cursor;
     //Lista de numeros que aparecem na tela
-    public List<Text> textos = new List<Text>();
+    public List<Text> numeros = new List<Text>();
     //Pega qual número está selecionado no momento (PRECISA que esse objeto tenho o script NumCadeado attached)
     public Text textoUtilizado;
     //Texto de vitória
-    public Text fim;
+    public GameObject fim;
     //Pega o audiosource que será responsavel pelo audio
     public AudioSource audioS;
     //Referencia ao jogador
-    public Movimento player;
+    public PlayerControl player;
     //Referencia ao prefab do puzzle
     public GameObject canvas;
 
@@ -31,14 +32,19 @@ public class CadeadoComCodigo : MonoBehaviour
     float InputX, InputY;
 
     bool moveu;
-
+    //Impedir que o player saia do puzzle de forma indevida
+    bool podeSair = true;
     public string textoFinal, resposta;
+
+    Vector3 posicaoInicial;
 
     // Use this for initialization
     void Start()
     {
         //Marca que o que está selecionado no momento é o primeiro numero
-        textoUtilizado = textos[textoAtual];
+        textoUtilizado = numeros[textoAtual];
+        //Salva a posição inicial do cursor
+        posicaoInicial = cursor.GetComponent<RectTransform>().localPosition;
     }
 
     // Update is called once per frame
@@ -54,25 +60,54 @@ public class CadeadoComCodigo : MonoBehaviour
         //Coloca o texto final para ser vazio
         textoFinal = "";
 
+        SairDoPuzzle();
+
         //Passa os numeros que foram colocados como string para a checagem posterior
-        for (int i = 0; i < textos.Count; i++)
+        for (int i = 0; i < numeros.Count; i++)
         {
-            string c = textos[i].text.ToString();
+            string c = numeros[i].text.ToString();
             textoFinal += c;
         }
 
         //Checa se os numeros passados são iguais a resposta do puzzle
         if (textoFinal == resposta)
         {
-            fim.enabled = true;
+            podeSair = false;
+            fim.SetActive(true);
             //O prefab é desativado após 2 segundos, o tempo pra musica tocar
-            Invoke("DesativaPuzzle", 2);
+            //Usando o Invoke a partir do singleton do TextController por motivos de organização
+            TextoParaJSON.singleton.Invoke("DesativaPuzzle", 2);
             //Toca a musica de acerto
             //Tá como oneshot pq tava repetindo e eu não sei pq
             audioS.PlayOneShot(audioS.clip);
         }
+    }
 
-        print(player.conversando);
+    void Resetar()
+    {
+        //Volta o cursor para a posição inicial
+        cursor.GetComponent<RectTransform>().localPosition = posicaoInicial;
+        //Marca que o que está selecionado no momento é o primeiro numero
+        textoAtual = 0;
+        //Reseta qual número (em texto atual) está aparecendo na tela agora
+        numAtual = 0;
+        //Marca que o que está selecionado no momento é o primeiro numero
+        textoUtilizado = numeros[textoAtual];
+        //Reseta todos os números em NumCadeado tanto a variavel quando o elemento de texto
+        for (int i = 0; i < numeros.Count; i++)
+        {
+            numeros[i].GetComponent<NumCadeado>().meuNumero = 0;
+            numeros[i].text = "0";
+        }
+    }
+
+    public void SairDoPuzzle()
+    {
+        if (Input.GetKeyDown(KeyCode.Escape) && podeSair)
+        {
+            Resetar();
+            TextoParaJSON.singleton.PausaPuzzle();
+        }
     }
 
     void MovimentoCursor()
@@ -97,20 +132,20 @@ public class CadeadoComCodigo : MonoBehaviour
                 //ou pra o final, respectivamente
                 if (textoAtual == -1)
                 {
-                    textoAtual = textos.Count;
+                    textoAtual = numeros.Count;
                 }
-                else if (textoAtual == textos.Count)
+                else if (textoAtual == numeros.Count)
                 {
                     textoAtual = 0;
                 }
 
                 //Faz com que a posição dos cursores seja a posição do numero em que ela está no eixo X apenas
                 cursor.GetComponent<RectTransform>().localPosition = new Vector3
-                    (textos[textoAtual].GetComponent<RectTransform>().localPosition.x,
+                    (numeros[textoAtual].GetComponent<RectTransform>().localPosition.x,
                      cursor.GetComponent<RectTransform>().localPosition.y, 0);
 
                 //Passa qual texto está selecionado para a variavel que lida com o objeto Text
-                textoUtilizado = textos[textoAtual];
+                textoUtilizado = numeros[textoAtual];
                 //Moveu se torna verdadeiro
                 moveu = true;
 
@@ -138,14 +173,6 @@ public class CadeadoComCodigo : MonoBehaviour
                 textoUtilizado.text = numAtual.ToString();
             }
         }
-    }
-
-    void DesativaPuzzle()
-    {
-        canvas.SetActive(false);
-        print(player.conversando);
-        player.conversando = false;
-        print(player.conversando);
     }
 
 }

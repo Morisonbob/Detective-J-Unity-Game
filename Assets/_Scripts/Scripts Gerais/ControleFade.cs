@@ -33,9 +33,9 @@ public class ControleFade : MonoBehaviour
     {
 		// Caso a animação tenha começado - o jogador perde o controle sobre o personagem, quando terminá-la ele terá controle novamente
         if (começouAni)
-            Player.GetComponent<Movimento>().enabled = false;
+            Player.GetComponent<PlayerControl>().enabled = false;
         else
-            Player.GetComponent<Movimento>().enabled = true;
+            Player.GetComponent<PlayerControl>().enabled = true;
 
 		// Caso a animação tenha chegado no momento em que a tela está escura - irá ser feito a transferência (Fica verdadeira na animação) 
         if (ativarTransferencia)

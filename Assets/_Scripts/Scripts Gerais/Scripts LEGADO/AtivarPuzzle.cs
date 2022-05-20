@@ -9,13 +9,13 @@ public class AtivarPuzzle : MonoBehaviour {
 
 	void Update(){
 		if (puzzleAtivo) {
-			Player.GetComponent<Movimento> ().enabled = false;
+			Player.GetComponent<PlayerControl> ().enabled = false;
 			Sala.SetActive (false);
 			Puzzle.SetActive (true);
 		}
 
 		if (puzzleAtivo && Input.GetButtonDown("Fire2")) {
-			Player.GetComponent<Movimento> ().enabled = true;
+			Player.GetComponent<PlayerControl> ().enabled = true;
 			Sala.SetActive (true);
 			Puzzle.SetActive (false);
 			puzzleAtivo = false;

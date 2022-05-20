@@ -22,7 +22,7 @@ public class ControlePersonagem : MonoBehaviour {
 	void Update () {
 		if (!paralisarPersonagem) { 
 			ReceberInputs ();
-			VerificarItem ();
+			//VerificarItem ();
 		}
 			
 		hit = Physics2D.OverlapCircle (transform.position, 1.5f, layerItens);
@@ -54,6 +54,7 @@ public class ControlePersonagem : MonoBehaviour {
 			GetComponent<Rigidbody2D> ().velocity = new Vector2 (inputX,inputY) * deslocamento;
 	}
 
+    /*
 	void VerificarItem(){
 		if (itemProximo != null && Vector2.Distance (gameObject.transform.position, itemProximo.transform.position) < 2) {
 			if (Input.GetButtonDown ("Fire2")) {
@@ -71,5 +72,5 @@ public class ControlePersonagem : MonoBehaviour {
 			apertarE.SetActive (true);
 		} else 
 			apertarE.SetActive (false);
-	}
+	}*/
 }

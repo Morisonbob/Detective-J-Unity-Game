@@ -6,7 +6,7 @@ using UnityEngine.UI;
 public class Cursor : MonoBehaviour
 {
 
-    //TODO: Fazer com que o jogador possa desistir e voltar depois.
+    //TODO: Otimização de chamadas
 
     // Coisas que precisam ser configuradas no Inspector para que funcione
     // 1. A quantidade de peças que irão ser interagiveis no pecasFotos - Size
@@ -26,12 +26,13 @@ public class Cursor : MonoBehaviour
     public GameObject panelPuzzle;          //Panel PRINCIPAL no qual o cursor e as peças da foto irão ficar.
     public GameObject pecaCarregada;       //Saber qual peça está sendo "Carregada" pelo cursor.
     public GameObject pack;               //GameObject PAI das imagens cortadas. Esse GameObjct contém TODAS as imagens que compõe a foto, como filhas.
-    [Tooltip ("Só arrasta o canvas prak")]
+    [Tooltip("Só arrasta o canvas prak")]
     public GameObject canvas;            //Gameobject do Canvas em que esse puzzle se encontra
     public AudioSource sourceAudio;     //AudioSource que vai tocar os sonzinhos
 
     //Só pra destravar esse pau no cu e ele poder andar de novo, mas eu vou muito mudar essa merda, vou sim
-    public Movimento player;
+    //ATUALIZADO EM 10/05/2018: Vou não
+    public PlayerControl player;
 
     public bool holding;        //Booleana para saber se o jogador está, ou não, segurando alguma foto.
     public bool fimPuzzle;      //Booleana criada para informar se o jogo acabou ou não. Por enquanto, ainda não é utilizada diretamente.
@@ -41,6 +42,7 @@ public class Cursor : MonoBehaviour
     Vector2 posCursorAntesMexer;    //Responsável por salvar a posição do Cursor ANTES de o mesmo realizar o movimento 
     Vector2 posCursorPosMexer;      //Irá receber a posição do cursor APOS o seu movimento.
     Vector2 panelPrincipalSize;     //Irá guardar o tamanho do Panel no qual o jogo irá se passar, sua Largura e sua altura.
+    Vector2 posInicialCursor;       //Irá guardar a posição inicial do cursor
 
     bool moveu;                 //Booleana para saber se o jogador já fez um movimento. Criada para impedir que o movimento saia mais de uma vez.
 
@@ -50,14 +52,15 @@ public class Cursor : MonoBehaviour
 
     void Start()
     {
-        //Armazenando o tamanho atual do panel. É feito isso pois, além sde ser referenciado na movimentação do cursor, 
-        //o panel ou o cavnas podem escalar em resoluções diferentes.
+        //Armazenando o tamanho atual do panel. É feito isso pois, além de ser referenciado na movimentação do cursor, 
+        //o panel ou o canvas podem escalar em resoluções diferentes.
         panelPrincipalSize = panelPuzzle.GetComponent<RectTransform>().sizeDelta;
         //A distância entre as peças, POR ENQUANTO, é de 10, como não tenho outras resoluções para testar, por enquanto fica assim.
         distanceGap = 10;
-
+        //Guarda a posição inicial do cursor
+        posInicialCursor = playerCursor.GetComponent<RectTransform>().localPosition;
         //Player arrombado, to botando essa var aqui com ódio
-        player = GameObject.Find("Player").GetComponent<Movimento>();
+        player = GameObject.Find("Player").GetComponent<PlayerControl>();
     }
 
     void Update()
@@ -68,6 +71,7 @@ public class Cursor : MonoBehaviour
 
         Movimento();       // Método responsável pela movimentação do cursor.
         PegarPeca();       // Método responsável por pegar / soltar uma peça
+        Resetar();
     }
 
     void Movimento()
@@ -204,17 +208,25 @@ public class Cursor : MonoBehaviour
         //TODO: Mudar para tocar vários audios diferentes
         sourceAudio.Play();
         //O Canvas é desativado após 2 segundos, o tempo pra animação tocar e mais um extrazinho
-        Invoke("DesativaCanvas", 2);
+        //Usando o Invoke a partir do singleton do TextController por motivos de organização
+        TextoParaJSON.singleton.Invoke("DesativaPuzzle", 2);
         //E esse script para de funcionar.
         gameObject.GetComponent<Cursor>().enabled = false;
     }
 
-    //Função que desativa o canvas, basicamente volta para a tela anterior
-    //Foi feita uma função pra poder ser chamada com Invoke
-    void DesativaCanvas()
+    //TODO: Melhorar a chamada da função resetar, está muito pesada
+    void Resetar()
     {
-        canvas.SetActive(false);
-        player.conversando = false;
+        if (Input.GetKeyDown(KeyCode.Escape))
+        {
+            //Volta todas as imagens para a posição inicial e reseta os bools delas
+            for (int i = 0; i < pack.transform.childCount; i++)
+            {
+                pack.transform.GetChild(i).transform.localPosition = pack.transform.GetChild(i).GetComponent<PosicaoImagem>().posInicial;
+            }
+            playerCursor.GetComponent<RectTransform>().localPosition = posInicialCursor;
+            TextoParaJSON.singleton.PausaPuzzle();
+        }
     }
 
     //<------------------------------------------------------------------------------>

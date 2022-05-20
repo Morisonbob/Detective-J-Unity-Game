@@ -8,3 +8,4 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/_Scenes/FirstPlayable.unity
     guid: ddb8f85935bcaa242b4fa9bdcbda66d8
+  m_configObjects: {}

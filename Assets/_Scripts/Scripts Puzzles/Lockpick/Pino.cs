@@ -5,6 +5,7 @@ using UnityEngine;
 public class Pino : MonoBehaviour
 {
 
+
     // <Variáveis> ====================================================================================================
 
     Vector3 posicaoInicial;                                         // A posição inicial do Pino
@@ -28,11 +29,7 @@ public class Pino : MonoBehaviour
     //Mudei tudo pra public pra não dar merda com tags e etc
     void Start()
     {
-        /*
-        martelinho = GameObject.FindWithTag("Player");
-        linhaInferior = GameObject.Find("Linha");
-        linhaSuperior = GameObject.Find("Linha2");
-        */
+
     }
 
     void Update()
