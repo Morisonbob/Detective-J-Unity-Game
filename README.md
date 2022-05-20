@@ -1,2 +1,2 @@
-<img src="https://imgur.com/WQ9bZYv">
+<img src="https://i.imgur.com/WQ9bZYv.png">
 # Detective-J
