@@ -12,5 +12,6 @@ The game main protagonist is a <b>young black man</b> entering the police force,
 
 <b>#Talking Design#</b>
 
-I wanted to create a <b>narrative driven game, with branching dialogue choices and different endings</b>, so I tought that a kinda noir detective setting was a good place to start doing what I wanted to do.
+I wanted to create a <b>narrative driven game with branching dialogue choices</b> and some puzzles, with a Ace Attorney inspiration, so I tought that a kinda noir detective setting was a good place to start doing what I wanted to do.
 
+The player controls a young black man investigating his first case with a helping hand of his unnamed mentor. During the gameplay the player has to solve puzzles to find clues about the case he is investigating and 
