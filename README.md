@@ -14,8 +14,16 @@ The game main protagonist is a <b>young black man</b> entering the police force,
 
 <b>#Talking Design#</b>
 
+<b>Dialogue System</b>
+
 I wanted to create a <b>narrative driven game with branching dialogue choices</b> and some puzzles, with a Ace Attorney inspiration, so I tought that a kinda noir detective setting was a good place to start doing what I wanted to do.
 
 The dialogue system is the star of the scripts, it controlls what texts can be shown, in what order, depending of what you done, the order in wich you interact with the objects change the kind of text you will get from this object, you can miss a lot of lines of dialogue or even lose acess to some puzzles depending on what you did, because the system tha control the dialogues also controlls when to open puzzles, what hint to give you and a lot of the game world.
 
-//Exeplo do script aqui
+I'm really proud of this dialogue system, is versatile enough to do a range of stuff and can be edited using a single JSON file if necessary, so no programming knowledge is needed when working on dialogues on this game.
+
+//Exemplo do script aqui
+
+<b>Puzzles</b>
+
+I wanted to put at least 3 different types of puzzles in the game, so the gameplay don't get hyper focused on the dialogues 100% of the time and to combine with the "vibe" of the game, to make the player 
