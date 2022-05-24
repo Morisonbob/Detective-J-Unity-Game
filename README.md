@@ -31,3 +31,5 @@ I wanted to put at least 3 different types of puzzles in the game, so the gamepl
 Two puzzles are number guessing" type of puzzles that can be used in a variety of forms, and one is a jigsaw puzzle. The tree of them are made in a way to make it be "generic" so a designer could change a lot about the puzzles without a need to touch the code.
 
 //Gifs of the puzzles
+
+This was one of the most fun and challenging games that I've made and is not yet finished, I don't know how long it will take me to put the game in a "finished" state
