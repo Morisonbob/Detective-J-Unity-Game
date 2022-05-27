@@ -18,9 +18,9 @@ I wanted to create a <b> narrative-driven game with branching dialogue choices</
 
 <b>Dialogue System</b>
 
-The dialogue system is the star of the scripts, it controls what texts can be shown, in what order, and depending on what you did, the order in which you interact with the objects changes the kind of text you will get from this object, you can miss a lot of lines of dialogue or even lose access to some puzzles depending on what you did, because the system that controls the dialogues also controls when to open puzzles, what hints to give you and a lot of the game world logic.
+The dialogue system is the star of the scripts, it controls <b>what texts can be shown, in what order, </b> and depending on what you did, the order in which you interact with the objects <b>changes the kind of text you will get from this object</b>, you can miss a lot of lines of dialogue or even lose access to some puzzles depending on what you did, because the system that controls the dialogues also controls when to open puzzles, what hints to give you and a lot of the game world logic.
 
-I'm really proud of this dialogue system, is versatile enough to do a range of stuff and can be edited using a single JSON file if necessary, so no programming knowledge is needed when working on dialogues on this game.
+I'm really proud of this dialogue system, is versatile enough to do a range of stuff and can be edited using <b>a single JSON file</b> if necessary, so no programming knowledge is needed when working on dialogues on this game.
 
 <img src="https://i.imgur.com/1cfYax4.png">      <img src="https://i.imgur.com/D9eec8b.png?1">
 
@@ -31,6 +31,8 @@ I wanted to put at least 3 different types of puzzles in the game, so the gamepl
 Two puzzles are number guessing" type of puzzles that can be used in a variety of forms, and one is a jigsaw puzzle. The three of them are made in a way to make it "generic" so a designer could change a lot about the puzzles without a need to touch the code.
  
 <img src="https://i.imgur.com/8Ww0IOT.gif">  <img src="https://i.imgur.com/BU2aktU.gif">  <img src="https://i.imgur.com/R2wIZ3T.gif">
+
+<b>Thank you</b>
 
 This was one of the most fun and challenging games that I've made and is not yet finished, I don't know how long it will take me to put the game in a "finished" state,  but I'll make it available for download as soon as the game is complete.
 
