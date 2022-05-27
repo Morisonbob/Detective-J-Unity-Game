@@ -30,9 +30,7 @@ I wanted to put at least 3 different types of puzzles in the game, so the gamepl
 
 Two puzzles are number guessing" type of puzzles that can be used in a variety of forms, and one is a jigsaw puzzle. The three of them are made in a way to make it "generic" so a designer could change a lot about the puzzles without a need to touch the code.
  
-<img src="https://i.imgur.com/yv7zMyz.png"> 
-<img src="https://i.imgur.com/yv7zMyz.png"> 
-<img src="https://i.imgur.com/yv7zMyz.png">
+<img src="https://i.imgur.com/yv7zMyz.png">  <img src="https://i.imgur.com/yv7zMyz.png">  <img src="https://i.imgur.com/yv7zMyz.png"> 
 
 //Gifs of the puzzles
 
