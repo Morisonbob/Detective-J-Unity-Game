@@ -22,7 +22,7 @@ The dialogue system is the star of the scripts, it controls what texts can be sh
 
 I'm really proud of this dialogue system, is versatile enough to do a range of stuff and can be edited using a single JSON file if necessary, so no programming knowledge is needed when working on dialogues on this game.
 
-<img src="https://i.imgur.com/P06g5Ee.png">  <img src="https://i.imgur.com/zitpEH4.png">
+<img src="https://i.imgur.com/P06g5Ee.png" size=small>  <img src="https://i.imgur.com/zitpEH4.png">
 <b><i>Script example</b></i>
 
 <b>Puzzles</b>
@@ -31,7 +31,7 @@ I wanted to put at least 3 different types of puzzles in the game, so the gamepl
 
 Two puzzles are number guessing" type of puzzles that can be used in a variety of forms, and one is a jigsaw puzzle. The three of them are made in a way to make it "generic" so a designer could change a lot about the puzzles without a need to touch the code.
  
-<img src="https://i.imgur.com/8Ww0IOT.gif">  <img src="https://i.imgur.com/BU2aktU.gif">  <img src="https://i.imgur.com/R2wIZ3T.gif"> <img src="https://i.imgur.com/8cUeNxM.png"> 
+<img src="https://i.imgur.com/8Ww0IOT.gif">  <img src="https://i.imgur.com/BU2aktU.gif">  <img src="https://i.imgur.com/R2wIZ3T.gif"> 
 <b><i>Some examples of the puzzles</i></b>
 
 This was one of the most fun and challenging games that I've made and is not yet finished, I don't know how long it will take me to put the game in a "finished" state,  but I'll make it available for download as soon as the game is complete.
