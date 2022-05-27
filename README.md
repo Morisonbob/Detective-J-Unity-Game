@@ -32,7 +32,7 @@ Two puzzles are number guessing" type of puzzles that can be used in a variety o
  
 <img src="https://i.imgur.com/8Ww0IOT.gif">  <img src="https://i.imgur.com/BU2aktU.gif">  <img src="https://i.imgur.com/R2wIZ3T.gif"> <img src="https://i.imgur.com/RJavNEm.gif"> 
 
-//Gifs of the puzzles
+<i>Some examples of the puzzles</i>
 
 This was one of the most fun and challenging games that I've made and is not yet finished, I don't know how long it will take me to put the game in a "finished" state,  but I'll make it available for download as soon as the game is complete.
 
