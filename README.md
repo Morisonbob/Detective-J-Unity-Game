@@ -22,8 +22,8 @@ The dialogue system is the star of the scripts, it controls what texts can be sh
 
 I'm really proud of this dialogue system, is versatile enough to do a range of stuff and can be edited using a single JSON file if necessary, so no programming knowledge is needed when working on dialogues on this game.
 
-<img src="https://i.imgur.com/1cfYax4.png">  <img src="https://i.imgur.com/D9eec8b.png">
-<b><i>Script example</b></i>
+<img src="https://i.imgur.com/1cfYax4.png">  <img src="https://i.imgur.com/D9eec8b.png?1">
+<b><i>Scripts</b></i>
 
 <b>Puzzles</b>
 
