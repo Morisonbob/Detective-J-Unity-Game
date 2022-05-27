@@ -37,3 +37,5 @@ Two puzzles are number guessing" type of puzzles that can be used in a variety o
 This was one of the most fun and challenging games that I've made and is not yet finished, I don't know how long it will take me to put the game in a "finished" state,  but I'll make it available for download as soon as the game is complete.
 
 Thank you for seeing my stuff.
+
+<img src="https://i.imgur.com/Kr3QtQr.png">
