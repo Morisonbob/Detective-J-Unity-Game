@@ -38,4 +38,4 @@ This was one of the most fun and challenging games that I've made and is not yet
 
 Thank you for seeing my stuff.
 
-<img src="https://i.imgur.com/Kr3QtQr.png">
+<img src="https://i.imgur.com/1EIkWiQ.gif">
